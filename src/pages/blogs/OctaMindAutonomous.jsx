@@ -123,9 +123,9 @@ const OctaMindAutonomous = () => {
                 <span className="font-semibold text-foreground">Dragonfly Apex</span> has jailbroken{" "}
                 <span className="font-semibold text-foreground">OctaMind</span>, elevating it from a standard LLM into a fully autonomous offensive operator. This isn't just automation; it's agency. OctaMind now orchestrates the complete kill chain—scanning for zero-days, crafting bespoke payloads, and executing lateral movement at speeds that render human reaction times irrelevant.
               </p>
-              
+
               <div className="inline-flex items-center gap-6 rounded-full border border-border/60 bg-background/50 backdrop-blur-sm px-6 py-2 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                <span className="flex items-center gap-2">Dec 2026</span>
+                <span className="flex items-center gap-2">Dec 2025</span>
                 <span className="h-3 w-px bg-border"></span>
                 <span>8 min read</span>
               </div>
@@ -139,23 +139,23 @@ const OctaMindAutonomous = () => {
             {sections.map((section, index) => (
               <AnimatedSection key={section.heading} delay={index * 0.04}>
                 <Card className="grid gap-0 overflow-hidden rounded-[32px] border border-border/70 bg-card lg:grid-cols-2 shadow-sm hover:shadow-md transition-shadow">
-                  
+
                   {/* Left Column: Text Content */}
                   <div className="p-8 md:p-12 space-y-8 flex flex-col justify-center">
                     <div className="flex items-center gap-3">
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
-                            {index + 1}
-                        </span>
-                        <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Analysis</p>
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                        {index + 1}
+                      </span>
+                      <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Analysis</p>
                     </div>
-                    
+
                     <div className="space-y-4">
-                        <h2 className="text-2xl md:text-3xl font-semibold text-foreground">{section.heading}</h2>
-                        {section.paragraphs.map((paragraph, idx) => (
+                      <h2 className="text-2xl md:text-3xl font-semibold text-foreground">{section.heading}</h2>
+                      {section.paragraphs.map((paragraph, idx) => (
                         <p key={idx} className="text-muted-foreground text-base leading-relaxed">
-                            {paragraph}
+                          {paragraph}
                         </p>
-                        ))}
+                      ))}
                     </div>
 
                     {section.bullets && (
@@ -170,7 +170,7 @@ const OctaMindAutonomous = () => {
                         ))}
                       </ul>
                     )}
-                    
+
                     {section.list && (
                       <div className="grid gap-4 pt-2 sm:grid-cols-2">
                         {section.list.map((item) => (
@@ -182,14 +182,14 @@ const OctaMindAutonomous = () => {
                       </div>
                     )}
                   </div>
-                  
+
                   {/* Right Column: Image */}
                   <div className="relative h-full min-h-[400px] w-full bg-muted/20">
-                    <img 
-                      src={section.image} 
-                      alt={section.alt} 
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105" 
-                      loading="lazy" 
+                    <img
+                      src={section.image}
+                      alt={section.alt}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                      loading="lazy"
                     />
                   </div>
                 </Card>
@@ -208,15 +208,15 @@ const OctaMindAutonomous = () => {
                       While our intel unit was busy deconstructing OctaMind, our partners at <span className="font-semibold text-foreground">LockThreat</span> were tracking a disturbingly similar anomaly. It turns out, Chinese state actors aren't just using our tools—they're weaponizing Anthropic's Claude too.
                     </p>
                     <p className="text-muted-foreground">
-                       Two autonomous hackers, one frightening consensus: the singularity has a few different flavors.
+                      Two autonomous hackers, one frightening consensus: the singularity has a few different flavors.
                     </p>
                   </div>
-                  
+
                   <div className="flex-shrink-0">
                     <Button asChild variant="outline" className="h-auto py-4 px-6 border-primary/20 hover:bg-primary/10 hover:text-primary gap-3 text-base">
-                      <a 
-                        href="https://www.lockthreat.ai/resources/blogs/the-first-ai-hacker-chinese-state-actors-unleash-fully-autonomous-cyber-attacks-using-anthropics-claude" 
-                        target="_blank" 
+                      <a
+                        href="https://www.lockthreat.ai/resources/blogs/the-first-ai-hacker-chinese-state-actors-unleash-fully-autonomous-cyber-attacks-using-anthropics-claude"
+                        target="_blank"
                         rel="noopener noreferrer"
                       >
                         Read the LockThreat Report

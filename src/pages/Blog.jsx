@@ -25,7 +25,7 @@ const blogPosts = [
     summary:
       "Dragonfly Apex has turned OctaMind from a normal LLM into a rogue autonomous system, giving it full agency across the cyber‑attack chain. It now identifies vulnerabilities, builds tailored exploits, and moves through networks faster than humans can respond.",
     readTime: "8 min read",
-    published: "Dec 2026",
+    published: "Dec 2025",
     image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&w=1600&q=80",
     href: "/blogs/octamind-autonomous-attacks",
   },
@@ -36,7 +36,7 @@ const blogPosts = [
     summary:
       "AI is transforming business, but without guardrails, it becomes a liability. Learn how to keep your organization safe, compliant, and future-ready with a robust governance framework.",
     readTime: "10 min read",
-    published: "Dec 2026",
+    published: "Dec 2025",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1600&q=80",
     href: "/blogs/guide-to-ai-governance",
   },

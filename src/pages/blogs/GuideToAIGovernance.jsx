@@ -145,9 +145,9 @@ const GuideToAIGovernance = () => {
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
                 AI is transforming business, but without guardrails, it becomes a liability. Learn how to keep your organization <span className="font-semibold text-foreground">safe, compliant, and future-ready</span> with a robust governance framework.
               </p>
-              
+
               <div className="inline-flex items-center gap-6 rounded-full border border-border/60 bg-background/50 backdrop-blur-sm px-6 py-2 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                <span className="flex items-center gap-2">Dec 2026</span>
+                <span className="flex items-center gap-2">Dec 2025</span>
                 <span className="h-3 w-px bg-border"></span>
                 <span>10 min read</span>
               </div>
@@ -162,23 +162,23 @@ const GuideToAIGovernance = () => {
               <AnimatedSection key={section.heading} delay={index * 0.04}>
                 {/* GRID LAYOUT: Matched OctaMindAutonomous style (Text Left, Image Right) */}
                 <Card className="grid gap-0 overflow-hidden rounded-[32px] border border-border/70 bg-card lg:grid-cols-2 shadow-sm hover:shadow-md transition-shadow">
-                  
+
                   {/* Left Column: Text Content */}
                   <div className="p-8 md:p-12 space-y-8 flex flex-col justify-center">
                     <div className="flex items-center gap-3">
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
-                            {index + 1}
-                        </span>
-                        <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Insight</p>
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                        {index + 1}
+                      </span>
+                      <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Insight</p>
                     </div>
-                    
+
                     <div className="space-y-4">
-                        <h2 className="text-2xl md:text-3xl font-semibold text-foreground">{section.heading}</h2>
-                        {section.paragraphs.map((paragraph, idx) => (
+                      <h2 className="text-2xl md:text-3xl font-semibold text-foreground">{section.heading}</h2>
+                      {section.paragraphs.map((paragraph, idx) => (
                         <p key={idx} className="text-muted-foreground text-base leading-relaxed">
-                            {paragraph}
+                          {paragraph}
                         </p>
-                        ))}
+                      ))}
                     </div>
 
                     {section.bullets && (
@@ -193,7 +193,7 @@ const GuideToAIGovernance = () => {
                         ))}
                       </ul>
                     )}
-                    
+
                     {section.list && (
                       <div className="grid gap-4 pt-2 sm:grid-cols-2">
                         {section.list.map((item) => (
@@ -205,14 +205,14 @@ const GuideToAIGovernance = () => {
                       </div>
                     )}
                   </div>
-                  
+
                   {/* Right Column: Image */}
                   <div className="relative h-full min-h-[400px] w-full bg-muted/20">
-                    <img 
-                      src={section.image} 
-                      alt={section.alt} 
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105" 
-                      loading="lazy" 
+                    <img
+                      src={section.image}
+                      alt={section.alt}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                      loading="lazy"
                     />
                   </div>
                 </Card>
@@ -231,15 +231,15 @@ const GuideToAIGovernance = () => {
                       We've covered the structural framework for responsible AI. But if you want the unfiltered reality of what happens when governance fails—and exactly how to keep your badge on your desk—our partners at <span className="font-semibold text-foreground">LockThreat</span> have the playbook.
                     </p>
                     <p className="text-muted-foreground">
-                       Because sometimes, "compliance" is just corporate speak for "survival."
+                      Because sometimes, "compliance" is just corporate speak for "survival."
                     </p>
                   </div>
-                  
+
                   <div className="flex-shrink-0">
                     <Button asChild variant="outline" className="h-auto py-4 px-6 border-primary/20 hover:bg-primary/10 hover:text-primary gap-3 text-base">
-                      <a 
-                        href="https://www.lockthreat.ai/resources/blogs/the-cisos-guide-to-ai-governance-keeping-your-business-and-your-job-safe" 
-                        target="_blank" 
+                      <a
+                        href="https://www.lockthreat.ai/resources/blogs/the-cisos-guide-to-ai-governance-keeping-your-business-and-your-job-safe"
+                        target="_blank"
                         rel="noopener noreferrer"
                       >
                         Read the LockThreat Guide
