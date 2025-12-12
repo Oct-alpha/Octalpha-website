@@ -8,6 +8,17 @@ import { ArrowRight, Sparkles, Calendar } from "lucide-react";
 
 const blogPosts = [
   {
+    id: "adhics-in-a-box",
+    category: "Webinar",
+    title: "ADHICS in a Box: Automate Your GRC Journey with AI",
+    summary:
+      "Struggling to maintain your DOH passing score? Join our exclusive webinar to learn how LockThreat's ADHICS-in-a-Box automates notifications, ownership, and audit readiness.",
+    readTime: "45 min Session",
+    published: "Dec 18, 2025",
+    image: "https://cdn.pixabay.com/photo/2024/10/09/06/08/ai-generated-9106907_1280.jpg",
+    href: "/adhics-webinar",
+  },
+  {
     id: "octamind-autonomous-attacks",
     category: "Cybersecurity",
     title: "The First AI Hacker: Chinese State Actors Unleash Fully Autonomous Cyber Attacks Using Octalpha's OctaMind",
@@ -48,13 +59,13 @@ const Blog = () => {
           <div className="container relative z-10 mx-auto px-4 py-20 md:py-28">
             <AnimatedSection className="text-center max-w-3xl mx-auto space-y-4">
               <p className="text-sm uppercase tracking-[0.35em] text-muted-foreground">Blogs</p>
-              
+
               {/* UPDATED TITLE */}
               <h1 className="text-4xl md:text-5xl font-bold text-foreground">Architecting Intelligence.</h1>
-              
+
               {/* UPDATED DESCRIPTION */}
               <p className="text-lg text-muted-foreground">
-                Discover the stories behind the code. From autonomous defense systems to next-gen cloud architecture, 
+                Discover the stories behind the code. From autonomous defense systems to next-gen cloud architecture,
                 we explore the technical breakthroughs defining the future of Octalpha.
               </p>
             </AnimatedSection>
@@ -79,11 +90,11 @@ const Blog = () => {
                 <AnimatedSection key={post.id} delay={index * 0.1}>
                   <Card className="group h-full overflow-hidden bg-card border-border/70 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                     <div className="h-56 overflow-hidden">
-                      <img 
-                        src={post.image} 
-                        alt={post.title} 
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                        loading="lazy" 
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
                       />
                     </div>
                     <div className="space-y-4 p-8">
@@ -96,7 +107,7 @@ const Blog = () => {
                           <span>{post.readTime}</span>
                         </div>
                       </div>
-                      
+
                       <div className="space-y-3">
                         <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
                           {post.title}
@@ -137,9 +148,9 @@ const Blog = () => {
                       <Sparkles className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  
-                  <Button 
-                    asChild 
+
+                  <Button
+                    asChild
                     className="bg-transparent border border-white text-white hover:bg-white/10 shadow-none"
                   >
                     <Link to="/services">Explore services</Link>
