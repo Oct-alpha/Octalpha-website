@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -11,6 +12,7 @@ const slides = [
     description:
       "From data centers to digital transformation. We help enterprises scale faster with secure, intelligent IT infrastructure.",
     cta: "Contact Us",
+    link: "/contact",
   },
   {
     id: 2,
@@ -20,6 +22,7 @@ const slides = [
     description:
       "Build resilient hybrid foundations with AI-ready architecture, automated observability, and zero-downtime operations.",
     cta: "Explore Infrastructure",
+    link: "/services/it-infrastructure",
   },
   {
     id: 3,
@@ -29,6 +32,7 @@ const slides = [
     description:
       "Comprehensive threat detection, GRC compliance, and network security solutions tailored for modern enterprises.",
     cta: "View Security Plans",
+    link: "/services/cybersecurity",
   },
   {
     id: 4,
@@ -38,6 +42,7 @@ const slides = [
     description:
       "Migrate, modernize, and manage your workloads with our expert Azure and AWS cloud enablement services.",
     cta: "Explore Cloud",
+    link: "/services/cloud-solutions",
   },
   {
     id: 5,
@@ -47,6 +52,7 @@ const slides = [
     description:
       "Activate AI-driven customer journey orchestration that unifies marketing, sales, and service touchpoints with measurable ROI.",
     cta: "Get Support",
+    link: "/services/customer-journey",
   },
   {
     id: 6,
@@ -56,6 +62,7 @@ const slides = [
     description:
       "Deploy autonomous GRC automation that documents controls, predicts risk, and keeps regulators satisfied in real time.",
     cta: "Discover GRC",
+    link: "/services/ai-grc-automation",
   },
   {
     id: 7,
@@ -65,6 +72,7 @@ const slides = [
     description:
       "AI-driven reconciliation matches ledgers, payment gateways, and ERP data in minutes—flagging anomalies and generating audit-ready evidence automatically.",
     cta: "Optimize Finance",
+    link: "/services/financial-reconciliation",
   },
 ];
 
@@ -83,25 +91,25 @@ export const Hero = () => {
 
   return (
     <section className="relative w-full min-h-[75vh] md:min-h-[600px] flex items-center justify-center overflow-hidden bg-black">
-      
+      {/* ... (background video layer same as before) ... */}
+
       {/* --- BACKGROUND VIDEO LAYER --- */}
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
         >
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="h-full w-full object-cover opacity-60" 
+            className="h-full w-full object-cover opacity-60"
           >
             <source src={slide.video} type="video/mp4" />
           </video>
-          
+
           {/* Dark Overlay for text contrast */}
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -109,9 +117,9 @@ export const Hero = () => {
 
       {/* --- CONTENT LAYER --- */}
       <div className="container mx-auto px-4 relative z-20 flex flex-col justify-center h-full py-20">
-        
+
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          
+
           <div>
             <div className="space-y-4 min-h-[180px] flex flex-col justify-center">
               <p className="text-sm uppercase tracking-[0.42em] text-cyan-300/80 font-semibold transition-all duration-300">
@@ -133,19 +141,25 @@ export const Hero = () => {
 
           <div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-              <Button 
-                size="lg" 
+              <Button
+                asChild
+                size="lg"
                 className="group bg-cyan-600 hover:bg-cyan-500 text-white border-0"
               >
-                {slides[currentSlide].cta}
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <Link to={slides[currentSlide].link}>
+                  {slides[currentSlide].cta}
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
               <Button
+                asChild
                 variant="outline"
                 size="lg"
                 className="bg-transparent border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
               >
-                Learn More
+                <Link to="/about">
+                  Learn More
+                </Link>
               </Button>
             </div>
           </div>
@@ -176,13 +190,12 @@ export const Hero = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              currentSlide === index ? "w-12 bg-cyan-500" : "w-2 bg-white/30 hover:bg-white/60"
-            }`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${currentSlide === index ? "w-12 bg-cyan-500" : "w-2 bg-white/30 hover:bg-white/60"
+              }`}
           />
         ))}
       </div>
-      
+
       <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full text-white/30 hover:text-white hover:bg-white/5 transition-all hidden md:block">
         <ChevronLeft className="h-10 w-10" />
       </button>
