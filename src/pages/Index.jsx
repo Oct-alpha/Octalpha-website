@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { MainLayout } from "@/components/layout/MainLayout";
+import WebinarPopup from "@/components/WebinarPopup";
 
 const Index = () => {
   // Generate array for 30 vendor images
@@ -117,6 +118,7 @@ const Index = () => {
 
   return (
     <MainLayout>
+      <WebinarPopup />
       <PageTransition>
         <Hero />
 
@@ -224,7 +226,7 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            
+
             {/* Fade effect on edges */}
             <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
             <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
