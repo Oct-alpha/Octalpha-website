@@ -8,7 +8,6 @@ import { Card } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { MainLayout } from "@/components/layout/MainLayout";
-import WebinarPopup from "@/components/WebinarPopup";
 
 const Index = () => {
   // Generate array for 30 vendor images
@@ -118,7 +117,6 @@ const Index = () => {
 
   return (
     <MainLayout>
-      <WebinarPopup />
       <PageTransition>
         <Hero />
 
