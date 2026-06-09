@@ -13,8 +13,9 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 
+const WHATSAPP_URL = "https://wa.me/971526543343";
+
 const CustomerJourney = () => {
-  // Replaced generic project phases with specific CJM Core Solutions
   const solutions = [
     {
       icon: Users,
@@ -42,7 +43,6 @@ const CustomerJourney = () => {
     },
   ];
 
-  // Replaced generic services with Advanced Capabilities/Benefits
   const capabilities = [
     {
       icon: BarChart3,
@@ -66,7 +66,6 @@ const CustomerJourney = () => {
       <PageTransition>
         <section className="relative overflow-hidden bg-gradient-hero pt-32 pb-20">
           <div className="absolute inset-0">
-            {/* Background: Flow / Movement / People theme */}
             <img
               src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80"
               alt="Customer journey flow"
@@ -92,7 +91,6 @@ const CustomerJourney = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               
-              {/* Core Solutions Grid (Previously Phases) */}
               <AnimatedSection className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-foreground mb-4">Core Flow Solutions</h2>
                 <div className="w-24 h-1 bg-gradient-accent mx-auto" />
@@ -127,7 +125,6 @@ const CustomerJourney = () => {
                 })}
               </div>
 
-              {/* Advanced Capabilities Grid (Previously Services) */}
               <AnimatedSection className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-foreground mb-4">Advanced Capabilities</h2>
                 <div className="w-24 h-1 bg-gradient-accent mx-auto" />
@@ -150,7 +147,6 @@ const CustomerJourney = () => {
                 })}
               </div>
 
-              {/* CTA Section */}
               <AnimatedSection>
                 <Card className="p-8 md:p-12 bg-gradient-primary text-center relative overflow-hidden">
                   <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,white,transparent_65%)]" />
@@ -161,8 +157,10 @@ const CustomerJourney = () => {
                     <p className="text-lg text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
                       Join organizations worldwide in creating efficient, pleasant, and measurable customer journeys.
                     </p>
-                    <Button variant="cta" size="lg">
-                      Schedule a Consultation
+                    <Button variant="cta" size="lg" asChild>
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                        Schedule a Consultation
+                      </a>
                     </Button>
                   </div>
                 </Card>

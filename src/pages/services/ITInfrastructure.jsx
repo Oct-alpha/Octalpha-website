@@ -5,6 +5,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 
+
 const ITInfrastructure = () => {
   const services = [
     {

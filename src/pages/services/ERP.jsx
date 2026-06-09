@@ -5,35 +5,37 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 
+const WHATSAPP_URL = "https://wa.me/971526543343";
+
 const ERP = () => {
   const modules = [
     {
-      icon: Calculator, // Financial = Accounting tool
+      icon: Calculator,
       title: "Financial Management",
       description: "Complete financial operations including accounting, budgeting, and reporting.",
     },
     {
-      icon: UserCheck, // HR = Verified User/Employee
+      icon: UserCheck,
       title: "Human Resources",
       description: "HR management, payroll, employee records, and performance tracking.",
     },
     {
-      icon: Truck, // Supply Chain = Logistics/Transport
+      icon: Truck,
       title: "Supply Chain Management",
       description: "Inventory, procurement, warehouse management, and logistics.",
     },
     {
-      icon: LineChart, // Sales = Growth Chart
+      icon: LineChart,
       title: "Sales & CRM",
       description: "Sales automation, customer relationship management, and pipeline tracking.",
     },
     {
-      icon: BrainCircuit, // BI = Intelligence/AI
+      icon: BrainCircuit,
       title: "Business Intelligence",
       description: "Real-time analytics, dashboards, and data-driven decision making.",
     },
     {
-      icon: Factory, // Manufacturing = Factory Building
+      icon: Factory,
       title: "Manufacturing",
       description: "Production planning, quality control, and shop floor management.",
     },
@@ -149,8 +151,10 @@ const ERP = () => {
                       Our ERP experts will help you select, implement, and optimize the right solution for your business
                       needs.
                     </p>
-                    <Button variant="cta" size="lg">
-                      Schedule ERP Consultation
+                    <Button variant="cta" size="lg" asChild>
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                        Schedule ERP Consultation
+                      </a>
                     </Button>
                   </div>
                 </Card>

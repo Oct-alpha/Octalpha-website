@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const useReveal = (options = {}) => {
+const useReveal = (threshold = 0.15) => {
   const elementRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -14,22 +14,16 @@ const useReveal = (options = {}) => {
           }
         });
       },
-      { threshold: 0.15, ...options },
+      { threshold },
     );
 
     const node = elementRef.current;
+    if (node) observer.observe(node);
 
-    if (node) {
-      observer.observe(node);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [options]);
+    return () => observer.disconnect();
+  }, [threshold]); // ← stable primitive, not a new object every render
 
   return [elementRef, isVisible];
 };
 
 export { useReveal };
-

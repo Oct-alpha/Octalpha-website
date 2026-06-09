@@ -7,41 +7,43 @@ import {
   CalendarCheck, 
   TabletSmartphone, 
   Check,
-  Projector // Imported Projector for Interactive Screens
+  Projector
 } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 
+const WHATSAPP_URL = "https://wa.me/971526543343";
+
 const DigitalCollaboration = () => {
   const services = [
     {
-      icon: MonitorPlay, // Teams Rooms = Screen/Presentation
+      icon: MonitorPlay,
       title: "Microsoft Teams Rooms",
       description: "Fully integrated Teams meeting rooms with advanced AV equipment and seamless collaboration.",
     },
     {
-      icon: Video, // Zoom Rooms = Video Camera
+      icon: Video,
       title: "Zoom Rooms",
       description: "Professional Zoom conference rooms with HD video, audio, and screen sharing capabilities.",
     },
     {
-      icon: PhoneForwarded, // PABX = Call Routing
+      icon: PhoneForwarded,
       title: "PABX Systems",
       description: "Modern IP-based phone systems for efficient internal and external communications.",
     },
     {
-      icon: Projector, // NEW: Unique icon for Interactive Screens
+      icon: Projector,
       title: "All-in-One Interactive Screens",
       description: "Advanced touch-enabled displays combining digital whiteboarding, wireless casting, and video conferencing.",
     },
     {
-      icon: CalendarCheck, // Booking = Calendar + Check
+      icon: CalendarCheck,
       title: "Smart Room Booking",
       description: "Intelligent room scheduling and resource management systems.",
     },
     {
-      icon: TabletSmartphone, // Mobile/Remote = Multiple devices
+      icon: TabletSmartphone,
       title: "Mobile & Remote Enablement",
       description: "Solutions for mobile workforce and remote collaboration capabilities.",
     },
@@ -129,8 +131,10 @@ const DigitalCollaboration = () => {
                     <p className="text-lg text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
                       Enable seamless collaboration across your organization with our integrated communication solutions.
                     </p>
-                    <Button variant="cta" size="lg">
-                      Request Demo
+                    <Button variant="cta" size="lg" asChild>
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                        Request Demo
+                      </a>
                     </Button>
                   </div>
                 </Card>

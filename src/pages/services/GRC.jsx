@@ -5,6 +5,9 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 
+// ✅ ADDED: WhatsApp URL constant
+const WHATSAPP_URL = "https://wa.me/971526543343";
+
 const GRC = () => {
   const pillars = [
     {
@@ -46,7 +49,6 @@ const GRC = () => {
       <PageTransition>
         <section className="relative overflow-hidden bg-gradient-hero pt-32 pb-20">
           <div className="absolute inset-0">
-            {/* UPDATED BACKGROUND: Abstract Tech/Security/Structure */}
             <img
               src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80"
               alt="Governance and compliance review"
@@ -127,8 +129,12 @@ const GRC = () => {
                     <p className="text-lg text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
                       Our GRC experts can help you automate compliance, reduce risk, and prepare for audits.
                     </p>
-                    <Button variant="cta" size="lg">
-                      Request GRC Assessment
+                    {/* ✅ CHANGED: was <Button variant="cta" size="lg">Request GRC Assessment</Button>
+                        NOW wraps with asChild + <a> to open WhatsApp instead of doing nothing */}
+                    <Button variant="cta" size="lg" asChild>
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                        Request GRC Assessment
+                      </a>
                     </Button>
                   </div>
                 </Card>

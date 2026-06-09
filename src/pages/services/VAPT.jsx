@@ -13,7 +13,7 @@ import {
 import { MainLayout } from "@/components/layout/MainLayout";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
-
+const WHATSAPP_URL = "https://wa.me/971526543343";
 const VAPT = () => {
   const services = [
     {
@@ -147,9 +147,11 @@ const VAPT = () => {
                     <p className="text-lg text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
                       Don't wait for a breach to happen. Schedule a comprehensive vulnerability assessment to understand your security posture and meet international compliance standards.
                     </p>
-                    <Button variant="cta" size="lg">
+                    <Button variant="cta" size="lg" asChild>
+                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                       Get a Free Quote
-                    </Button>
+                    </a>
+                  </Button>
                   </div>
                 </Card>
               </AnimatedSection>

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneVolume, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
+const WHATSAPP_URL = "https://wa.me/971526543343";
 const CustomersPage = () => {
   return (
     <MainLayout>
@@ -55,15 +56,11 @@ const CustomersPage = () => {
                     </p>
                   </div>
                   <div className="flex flex-col md:items-end">
-                    <Button
-                      asChild
-                      size="lg"
-                      className="bg-gradient-to-r from-[#00d2ff] to-[#00a6ff] hover:opacity-90 text-white font-semibold rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all"
-                    >
-                      <Link to="/contact" className="flex items-center gap-3">
-                        Schedule a call
+                      <Button variant="cta" size="lg" asChild>
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                        Schedule a Call
                         <FontAwesomeIcon icon={faPhoneVolume} className="h-4 w-4" />
-                      </Link>
+                      </a>
                     </Button>
                   </div>
                 </div>

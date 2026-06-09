@@ -5,35 +5,37 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 
+const WHATSAPP_URL = "https://wa.me/971526543343";
+
 const Cybersecurity = () => {
   const services = [
     {
-      icon: GlobeLock, // Global Network Security
+      icon: GlobeLock,
       title: "Network Security",
       description: "Deploy Next-Generation Firewalls (NGFW), IDS/IPS Systems, and Secure Web Gateways. Includes Network Access Control (NAC) and robust VPN solutions to secure your perimeter.",
     },
     {
-      icon: Laptop, // Endpoint = Devices (Laptop)
+      icon: Laptop,
       title: "Endpoint Security",
       description: "Protect every device with Endpoint Protection Platforms (EPP) and Detection & Response (EDR). Covers Mobile Device Management (MDM), anti-malware, and application whitelisting.",
     },
     {
-      icon: Fingerprint, // Identity = Fingerprint
+      icon: Fingerprint,
       title: "Identity & Access Management",
       description: "Secure user access with Single Sign-On (SSO), Multi-Factor Authentication (MFA), and Privileged Access Management (PAM). Includes Directory Services and Password Vaults.",
     },
     {
-      icon: Siren, // Threat Detection = Alert/Siren
+      icon: Siren,
       title: "Threat Detection & Response",
       description: "Detect and neutralize threats using SIEM Solutions, XDR, and MDR. We leverage Threat Intelligence Platforms and automated Incident Response (SOAR) for rapid action.",
     },
     {
-      icon: CloudCog, // Cloud Security = Cloud + Gears
+      icon: CloudCog,
       title: "Cloud Security",
       description: "Safeguard cloud assets with CASB, CSPM, and CWPP. Features Web Application Firewalls (WAF) and Zero Trust Network Access (ZTNA) for modern workloads.",
     },
     {
-      icon: ClipboardList, // Assessment = Checklist
+      icon: ClipboardList,
       title: "Security Assessment",
       description: "Evaluate your posture with VAPT Services, risk assessments, and security audits. Includes rigorous compliance testing and comprehensive penetration testing.",
     },
@@ -95,8 +97,10 @@ const Cybersecurity = () => {
                       Our multi-layered security approach ensures comprehensive protection across all attack surfaces,
                       from network perimeter to endpoint devices and cloud infrastructure.
                     </p>
-                    <Button variant="cta" size="lg">
-                      Schedule Security Assessment
+                    <Button variant="cta" size="lg" asChild>
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                        Schedule Security Assessment
+                      </a>
                     </Button>
                   </div>
                 </Card>
