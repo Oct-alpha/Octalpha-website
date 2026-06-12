@@ -27,6 +27,7 @@ import BackupDisasterRecovery from "./pages/services/BackupDisasterRecovery";
 import FinancialReconciliation from "./pages/services/FinancialReconciliation";
 import AIGRCAutomation from "./pages/services/AIGRCAutomation";
 import { ScrollToTop } from "./components/ScrollToTop";
+import ChatBot from "./components/ChatBot"; // ← ADD 1
 
 const queryClient = new QueryClient();
 
@@ -63,6 +64,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ChatBot /> {/* ← ADD 2 */}
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -14,6 +14,8 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 
+const WHATSAPP_URL = "https://wa.me/971526543343";
+
 const FinancialReconciliation = () => {
   const features = [
     {
@@ -62,7 +64,6 @@ const FinancialReconciliation = () => {
       <PageTransition>
         <section className="relative overflow-hidden bg-gradient-hero pt-32 pb-20">
           <div className="absolute inset-0">
-            {/* Background Image: Finance / Data / Analytics theme */}
             <img
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80"
               alt="Financial data analysis"
@@ -86,18 +87,11 @@ const FinancialReconciliation = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              
-              {/* Introduction Text */}
+
               <AnimatedSection className="mb-16 text-center max-w-3xl mx-auto">
                 <h2 className="text-3xl font-bold text-foreground mb-6">Simplify Your Financial Operations</h2>
-                {/* <p className="text-muted-foreground text-lg leading-relaxed">
-                  Managing and reconciling payments shouldn't be a bottleneck. Our software solution streamlines the entire process, 
-                  providing you with a highly accurate and efficient way to handle payment reconciliations. 
-                  Experience significant improvements in data integrity and overall financial management.
-                </p> */}
               </AnimatedSection>
 
-              {/* Features Grid */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 {features.map((feature, index) => {
                   const Icon = feature.icon;
@@ -119,10 +113,8 @@ const FinancialReconciliation = () => {
                 })}
               </div>
 
-              {/* Security & Benefits Split Section */}
               <AnimatedSection>
                 <div className="grid md:grid-cols-5 gap-8 mb-16">
-                  {/* Security Highlight */}
                   <Card className="md:col-span-2 p-8 bg-gradient-to-br from-accent/10 to-transparent border-accent/20 flex flex-col justify-center">
                     <ShieldCheck className="h-12 w-12 text-accent mb-6" />
                     <h3 className="text-2xl font-bold text-foreground mb-4">Uncompromised Security</h3>
@@ -132,7 +124,6 @@ const FinancialReconciliation = () => {
                     </p>
                   </Card>
 
-                  {/* Benefits List */}
                   <Card className="md:col-span-3 p-8 bg-muted/50">
                     <h3 className="text-2xl font-bold text-foreground mb-6">Why Automate With Us?</h3>
                     <div className="grid sm:grid-cols-1 gap-4">
@@ -147,7 +138,6 @@ const FinancialReconciliation = () => {
                 </div>
               </AnimatedSection>
 
-              {/* CTA Section */}
               <AnimatedSection>
                 <Card className="p-8 md:p-12 bg-gradient-primary text-center relative overflow-hidden">
                   <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,white,transparent_65%)]" />
@@ -159,8 +149,10 @@ const FinancialReconciliation = () => {
                       Stop wrestling with spreadsheets. Let our automated solution handle the complexity of reconciliation 
                       so you can focus on what really matters.
                     </p>
-                    <Button variant="cta" size="lg">
-                      Schedule a Demo
+                    <Button variant="cta" size="lg" asChild>
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                        Schedule a Demo
+                      </a>
                     </Button>
                   </div>
                 </Card>

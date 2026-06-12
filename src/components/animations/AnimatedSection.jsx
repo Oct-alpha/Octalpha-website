@@ -21,6 +21,7 @@ const AnimatedSection = ({ children, direction = "up", delay = 0, className }) =
         transform: isVisible ? "none" : fallbackTransform,
         transition: "opacity 0.7s ease, transform 0.7s ease",
         transitionDelay: `${delay}s`,
+        pointerEvents: isVisible ? "auto" : "none", // ← fix: don't block clicks when hidden
       }}
     >
       {children}
@@ -29,4 +30,3 @@ const AnimatedSection = ({ children, direction = "up", delay = 0, className }) =
 };
 
 export { AnimatedSection };
-

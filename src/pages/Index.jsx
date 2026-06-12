@@ -9,6 +9,8 @@ import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { MainLayout } from "@/components/layout/MainLayout";
 
+const WHATSAPP_URL = "https://wa.me/971526543343";
+
 const Index = () => {
   // Generate array for 30 vendor images
   const vendorCount = 30;
@@ -26,12 +28,8 @@ const Index = () => {
     let animationFrameId;
 
     const animate = () => {
-      // If user is NOT dragging, we auto-scroll
       if (!isDown && slider) {
-        slider.scrollLeft += 1; // Adjust speed (0.5 for slower, 2 for faster)
-
-        // Infinite Loop Logic:
-        // If we have scrolled past the first set of items (halfway), reset to 0
+        slider.scrollLeft += 1;
         if (slider.scrollLeft >= slider.scrollWidth / 2) {
           slider.scrollLeft = 0;
         }
@@ -39,9 +37,7 @@ const Index = () => {
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    // Start the animation loop
     animationFrameId = requestAnimationFrame(animate);
-
     return () => cancelAnimationFrame(animationFrameId);
   }, [isDown]);
 
@@ -52,19 +48,14 @@ const Index = () => {
     setScrollLeft(carouselRef.current.scrollLeft);
   };
 
-  const handleMouseLeave = () => {
-    setIsDown(false);
-  };
-
-  const handleMouseUp = () => {
-    setIsDown(false);
-  };
+  const handleMouseLeave = () => setIsDown(false);
+  const handleMouseUp = () => setIsDown(false);
 
   const handleMouseMove = (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // *2 determines drag speed
+    const walk = (x - startX) * 2;
     carouselRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -189,7 +180,6 @@ const Index = () => {
         <section className="py-20 bg-background border-b border-border/40 overflow-hidden select-none">
           <div className="container mx-auto px-4 mb-12 text-center">
             <AnimatedSection>
-              {/* STYLE UPDATE: Matched exact style of 'About' and 'Success Stories' headers */}
               <p className="text-sm uppercase tracking-[0.35em] text-muted-foreground mb-3">
                 Our Clients
               </p>
@@ -207,10 +197,7 @@ const Index = () => {
               onMouseLeave={handleMouseLeave}
               onMouseUp={handleMouseUp}
               onMouseMove={handleMouseMove}
-              style={{
-                width: "100%",
-                whiteSpace: "nowrap",
-              }}
+              style={{ width: "100%", whiteSpace: "nowrap" }}
             >
               {[...vendors, ...vendors].map((num, index) => (
                 <div key={index} className="flex-shrink-0 w-32 md:w-40 h-24 flex items-center justify-center">
@@ -275,10 +262,10 @@ const Index = () => {
                   size="lg"
                   className="bg-gradient-to-r from-[#00d2ff] to-[#00a6ff] hover:opacity-90 text-white font-semibold rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all"
                 >
-                  <Link to="/contact" className="flex items-center gap-3">
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                     Schedule a call
                     <FontAwesomeIcon icon={faPhoneVolume} className="h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </Card>

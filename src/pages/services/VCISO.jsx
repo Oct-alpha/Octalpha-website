@@ -14,6 +14,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 
+const WHATSAPP_URL = "https://wa.me/971526543343";
 const VCISO = () => {
   const services = [
     {
@@ -147,8 +148,10 @@ const VCISO = () => {
                     <p className="text-lg text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
                       Don't leave your security strategy to chance. Partner with an experienced vCISO to lead your organization's cybersecurity efforts and ensure regulatory compliance.
                     </p>
-                    <Button variant="cta" size="lg">
-                      Schedule a Consultation
+                    <Button variant="cta" size="lg" asChild>
+                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                        Schedule a Consultation
+                      </a>
                     </Button>
                   </div>
                 </Card>

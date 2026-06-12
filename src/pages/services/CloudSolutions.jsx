@@ -5,35 +5,37 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 
+const WHATSAPP_URL = "https://wa.me/971526543343";
+
 const CloudSolutions = () => {
   const services = [
     {
-      icon: Cloud, // Core Cloud Service
+      icon: Cloud,
       title: "Multi-Cloud Support",
       description: "Expert services for Azure, AWS, Oracle, and Google Cloud platforms.",
     },
     {
-      icon: Rocket, // Optimization = Speed/Efficiency
+      icon: Rocket,
       title: "Cost Optimization",
       description: "Right-sizing and scalability strategies to optimize cloud spending.",
     },
     {
-      icon: ArrowLeftRight, // Migration = Moving back and forth
+      icon: ArrowLeftRight,
       title: "Cloud Migration",
       description: "Seamless migration of workloads from on-premises to cloud infrastructure.",
     },
     {
-      icon: Lock, // Security = Lock
+      icon: Lock,
       title: "Cloud Security",
       description: "Cloud-native security, backup solutions, and compliance management.",
     },
     {
-      icon: DatabaseZap, // DR = Fast Database recovery
+      icon: DatabaseZap,
       title: "Disaster Recovery",
       description: "Cloud-based backup and disaster recovery solutions for business continuity.",
     },
     {
-      icon: BoxSelect, // Containerization = Box/Container
+      icon: BoxSelect,
       title: "Containerization",
       description: "Modern application deployment using containers and orchestration.",
     },
@@ -132,8 +134,10 @@ const CloudSolutions = () => {
                     <p className="text-lg text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
                       Our cloud experts will help you choose the right platform, migrate seamlessly, and optimize costs.
                     </p>
-                    <Button variant="cta" size="lg">
-                      Schedule Cloud Consultation
+                    <Button variant="cta" size="lg" asChild>
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                        Schedule Cloud Consultation
+                      </a>
                     </Button>
                   </div>
                 </Card>
