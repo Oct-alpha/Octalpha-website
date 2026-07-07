@@ -7,6 +7,41 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Calendar } from "lucide-react";
 
 const blogPosts = [
+  // --- NEW OCTOBER POSTS (appear first) ---
+  {
+    id: "ai-transformation-fixing-repeated-work",
+    category: "AI Transformation",
+    title: "AI Transformation Is Not About Replacing People. It Is About Fixing Repeated Work.",
+    summary:
+      "The best AI transformation usually starts small — with one question: where is your team losing time every day? Here's how to make AI adoption practical, not a buzzword.",
+    readTime: "6 min read",
+    published: "June  2026",
+    image: "https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&w=1600&q=80",
+    href: "/blogs/ai-transformation-fixing-repeated-work",
+  },
+  {
+    id: "cybersecurity-digital-transformation-day-one",
+    category: "Cybersecurity",
+    title: "Cybersecurity Should Be Built Into Digital Transformation From Day One",
+    summary:
+      "Every new system, login, device, and application becomes a possible entry point. Learn why security must be part of the plan from the start, not an afterthought.",
+    readTime: "6 min read",
+    published: "June 2026",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80",
+    href: "/blogs/cybersecurity-digital-transformation-day-one",
+  },
+  {
+    id: "cybersecurity-health-check",
+    category: "Cybersecurity",
+    title: "Why Every Business Needs a Practical Cybersecurity Health Check",
+    summary:
+      "Many companies only think about cybersecurity after something goes wrong. A health check helps you find the gaps early — before a major issue happens.",
+    readTime: "5 min read",
+    published: "June  2026",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
+    href: "/blogs/cybersecurity-health-check",
+  },
+  // --- EXISTING POSTS ---
   {
     id: "adhics-in-a-box",
     category: "Webinar",
@@ -32,7 +67,7 @@ const blogPosts = [
   {
     id: "guide-to-ai-governance",
     category: "Governance",
-    title: "The CISO’s Guide to AI Governance: How OctAlpha Helps You Keep Your Business Safe, Compliant & Future-Ready",
+    title: "The CISO's Guide to AI Governance: How OctAlpha Helps You Keep Your Business Safe, Compliant & Future-Ready",
     summary:
       "AI is transforming business, but without guardrails, it becomes a liability. Learn how to keep your organization safe, compliant, and future-ready with a robust governance framework.",
     readTime: "10 min read",
@@ -59,18 +94,12 @@ const Blog = () => {
           <div className="container relative z-10 mx-auto px-4 py-20 md:py-28">
             <AnimatedSection className="text-center max-w-3xl mx-auto space-y-4">
               <p className="text-sm uppercase tracking-[0.35em] text-muted-foreground">Blogs</p>
-
-              {/* UPDATED TITLE */}
               <h1 className="text-4xl md:text-5xl font-bold text-foreground">Architecting Intelligence.</h1>
-
-              {/* UPDATED DESCRIPTION */}
               <p className="text-lg text-muted-foreground">
                 Discover the stories behind the code. From autonomous defense systems to next-gen cloud architecture,
                 we explore the technical breakthroughs defining the future of Octalpha.
               </p>
             </AnimatedSection>
-
-            {/* TAGS SECTION REMOVED */}
           </div>
         </section>
 
