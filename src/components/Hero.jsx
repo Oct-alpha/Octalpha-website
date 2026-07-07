@@ -17,7 +17,7 @@ const slides = [
   {
     id: 2,
     video: "/Img/Hero/Hero1.mp4",
-    title: "Your End-to-End Technology Partner",
+    title: "Your Specialized Technology Partner",
     subtitle: "Empowering Connections. Driving the Future.",
     description:
       "From data centers to digital transformation. We help enterprises scale faster with secure, intelligent IT infrastructure.",
