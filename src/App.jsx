@@ -10,6 +10,9 @@ import Blog from "./pages/Blog";
 import OctaMindAutonomous from "./pages/blogs/OctaMindAutonomous";
 import GuideToAIGovernance from "./pages/blogs/GuideToAIGovernance";
 import WebinarBlog from "./pages/blogs/WebinarBlog";
+import AITransformationRepeatedWork from "./pages/blogs/AITransformationRepeatedWork";
+import CybersecurityDigitalTransformation from "./pages/blogs/CybersecurityDigitalTransformation";
+import CybersecurityHealthCheck from "./pages/blogs/CybersecurityHealthCheck";
 import CustomersPage from "./pages/CustomersPage";
 import ContactPage from "./pages/ContactPage";
 import ITInfrastructure from "./pages/services/ITInfrastructure";
@@ -44,6 +47,9 @@ const App = () => (
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/octamind-autonomous-attacks" element={<OctaMindAutonomous />} />
           <Route path="/blogs/guide-to-ai-governance" element={<GuideToAIGovernance />} />
+          <Route path="/blogs/ai-transformation-fixing-repeated-work" element={<AITransformationRepeatedWork />} />
+          <Route path="/blogs/cybersecurity-digital-transformation-day-one" element={<CybersecurityDigitalTransformation />} />
+          <Route path="/blogs/cybersecurity-health-check" element={<CybersecurityHealthCheck />} />
           <Route path="/adhics-webinar" element={<WebinarBlog />} />
           <Route path="/customers" element={<CustomersPage />} />
           <Route path="/contact" element={<ContactPage />} />

@@ -21,7 +21,7 @@ export const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      content: "Tel: +971 5 265 43343",
+      content: "+971 4 242 4920  |  +971 5 265 43343",
       href: phoneHref(),
       external: true,
       color: "hover:text-green-500",

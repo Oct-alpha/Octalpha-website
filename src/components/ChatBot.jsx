@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 
 const WHATSAPP = "971526543343";
 const EMAIL    = "info.dxb@octalpha.com";
-const GEMINI_API_KEY = ["AQ.Ab8RN6Lo4ZC7Z9gFiFl-Ak-23U", "sQ7_742aYNIdL8gkRi2FpMwg"].join(""); // 
+const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE"; // ← replace with your key
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`;
 
 const SYSTEM_PROMPT = `You are Octalpha's AI support assistant. Be friendly and professional.
@@ -211,20 +211,11 @@ export default function ChatBot() {
   }, []);
 
   useEffect(() => {
-        if (!open || !isMobile) return;
-        // Prevent body scroll when chat is open on mobile
-        document.body.style.overflow = "hidden";
-        document.body.style.position = "fixed";
-        document.body.style.width = "100%";
-        const handler = () => setTimeout(() => bottomRef.current?.scrollIntoView({ behavior:"smooth" }), 300);
-        window.addEventListener("resize", handler);
-        return () => {
-        document.body.style.overflow = "";
-        document.body.style.position = "";
-        document.body.style.width = "";
-        window.removeEventListener("resize", handler);
-        };
-    }, [open, isMobile]);
+    if (!open || !isMobile) return;
+    const handler = () => setTimeout(() => bottomRef.current?.scrollIntoView({ behavior:"smooth" }), 300);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, [open, isMobile]);
 
   useEffect(() => {
     if (!open) return;
@@ -338,15 +329,15 @@ export default function ChatBot() {
     }
   }
 
-    const panelStyle = isMobile ? {
-        position:"fixed", top:0, bottom:0, left:0, right:0,
-        width:"100%", height:"100%",
-        borderRadius:0, zIndex:10000,
-        animation:"oa-slide-up .3s cubic-bezier(0.16,1,0.3,1) both",
-    } : {
-        width:385, height:580, borderRadius:20,
-        animation:"oa-up .36s cubic-bezier(0.16,1,0.3,1) both",
-    };
+  const panelStyle = isMobile ? {
+    position:"fixed", bottom:0, left:0, right:0,
+    width:"100%", height:"92dvh",
+    borderRadius:"20px 20px 0 0", zIndex:10000,
+    animation:"oa-slide-up .3s cubic-bezier(0.16,1,0.3,1) both",
+  } : {
+    width:385, height:580, borderRadius:20,
+    animation:"oa-up .36s cubic-bezier(0.16,1,0.3,1) both",
+  };
 
   return (
     <div style={{ position:"fixed", bottom:isMobile ? 16 : 24, right:isMobile ? 16 : 24, zIndex:9999, display:"flex", flexDirection:"column", alignItems:"flex-end", gap:10, fontFamily:"'DM Sans','Inter',sans-serif" }}>

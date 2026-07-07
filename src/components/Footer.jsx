@@ -5,7 +5,7 @@ import { faLinkedin, faFacebook, faInstagram, faXTwitter } from "@fortawesome/fr
 const MAPS_URL = "https://maps.google.com/?q=904+9th+floor+Tower+B+Business+Central+Towers+Dubai+Internet+City+Dubai+UAE";
 
 const isMobile = () => /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-const phoneHref = () => isMobile() ? "tel:+971526543343" : "https://wa.me/971526543343";
+const phoneHref = (number) => (isMobile() ? `tel:+${number}` : `https://wa.me/${number}`);
 
 export const Footer = () => {
   return (
@@ -103,10 +103,18 @@ export const Footer = () => {
               {/* Phone → dialer on mobile, WhatsApp Web on desktop */}
               <li>
                 <a
-                  href={phoneHref()}
+                  href={phoneHref("97142424920")}
                   target={isMobile() ? undefined : "_blank"}
                   rel={isMobile() ? undefined : "noopener noreferrer"}
-                  className="text-primary-foreground/70 hover:text-accent transition-colors"
+                  className="block text-primary-foreground/70 hover:text-accent transition-colors"
+                >
+                  Tel: +971 4 242 4920
+                </a>
+                <a
+                  href={phoneHref("971526543343")}
+                  target={isMobile() ? undefined : "_blank"}
+                  rel={isMobile() ? undefined : "noopener noreferrer"}
+                  className="block text-primary-foreground/70 hover:text-accent transition-colors"
                 >
                   Tel: +971 5 265 43343
                 </a>

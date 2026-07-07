@@ -6,6 +6,16 @@ import { ArrowRight, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     id: 1,
+    video: "https://cdn.pixabay.com/video/2025/09/13/303881_tiny.mp4",
+    title: "AI Transformation Maturity Assessment",
+    subtitle: "Modernize. Automate. Orchestrate.",
+    description:
+      "Build resilient hybrid foundations with AI-ready architecture, automated observability, and zero-downtime operations.",
+    cta: "Explore Infrastructure",
+    link: "/services/it-infrastructure",
+  },
+  {
+    id: 2,
     video: "/Img/Hero/Hero1.mp4",
     title: "Your End-to-End Technology Partner",
     subtitle: "Empowering Connections. Driving the Future.",
@@ -13,16 +23,6 @@ const slides = [
       "From data centers to digital transformation. We help enterprises scale faster with secure, intelligent IT infrastructure.",
     cta: "Contact Us",
     link: "/contact",
-  },
-  {
-    id: 2,
-    video: "https://cdn.pixabay.com/video/2025/09/13/303881_tiny.mp4",
-    title: "AI-Ready IT Infrastructure",
-    subtitle: "Modernize. Automate. Orchestrate.",
-    description:
-      "Build resilient hybrid foundations with AI-ready architecture, automated observability, and zero-downtime operations.",
-    cta: "Explore Infrastructure",
-    link: "/services/it-infrastructure",
   },
   {
     id: 3,
