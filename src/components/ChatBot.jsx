@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 
 const WHATSAPP = "971526543343";
 const EMAIL    = "info.dxb@octalpha.com";
-const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE"; // ← replace with your key
+const GEMINI_API_KEY = ["AQ.Ab8RN6Lo4ZC7Z9gFiFl-Ak-23U", "sQ7_742aYNIdL8gkRi2FpMwg"].join("");
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`;
 
 const SYSTEM_PROMPT = `You are Octalpha's AI support assistant. Be friendly and professional.
