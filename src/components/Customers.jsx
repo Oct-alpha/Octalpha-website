@@ -2,9 +2,47 @@ import { Card } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 
 export const Customers = () => {
-  // Generate an array from 1 to 32
-  const partnerCount = 32;
+  // Generate an array from 1 to 34
+  const partnerCount = 34;
   const partners = Array.from({ length: partnerCount }, (_, i) => i + 1);
+
+  // Real names for alt text / accessibility. Add 35-38 once confirmed.
+  const partnerNames = {
+    1: "Google",
+    2: "Trellix",
+    3: "Red Hat",
+    4: "Huawei",
+    5: "xFusion",
+    6: "HP",
+    7: "Dell EMC",
+    8: "Lenovo",
+    9: "Aruba",
+    10: "Microsoft",
+    11: "Palo Alto Networks",
+    12: "Fortinet",
+    13: "Cisco",
+    14: "Symantec",
+    15: "AWS",
+    16: "Azure",
+    17: "VMware",
+    18: "Veeam",
+    19: "Zscaler",
+    20: "ManageEngine",
+    21: "Quorum",
+    22: "K7",
+    23: "Avaya",
+    24: "Ruijie",
+    25: "Eaton",
+    26: "APC",
+    27: "LockThreat",
+    28: "Timestream",
+    29: "MAXHUB",
+    30: "Polycom",
+    31: "evoko",
+    32: "Logitech",
+    33: "Grandstream",
+    34: "Yealink",
+  };
 
   // CONFIGURATION: Map specific Partner IDs to their URLs
   const partnerLinks = {
@@ -12,6 +50,24 @@ export const Customers = () => {
     2: "https://smart-cjm.com/en/",
     3: "https://timestreamgroup.com/",
   };
+
+  // CONFIGURATION: Bump up specific logos that render smaller than their
+  // neighbors due to extra whitespace baked into the source PNG.
+  // Add/remove partner numbers here and tweak the Tailwind classes as needed.
+  const sizeOverrides = {
+    1: "h-16 md:h-20",  // Google
+    3: "h-16 md:h-20",  // Red Hat
+    5: "h-16 md:h-20",  // xFusion
+    9: "h-16 md:h-20",  // Aruba
+    10: "h-16 md:h-20", // Microsoft
+    14: "h-14 md:h-18", // Symantec
+    16: "h-16 md:h-20", // Azure
+    22: "h-16 md:h-20", // K7
+    27: "h-16 md:h-20", // LockThreat
+    31: "h-14 md:h-18", // Evoko
+    32: "h-16 md:h-20", // Logitech
+  };
+  const defaultLogoSize = "h-12 md:h-16";
 
   return (
     <section id="customers" className="py-20 bg-background">
@@ -36,6 +92,7 @@ export const Customers = () => {
             
             // Check if this specific number has a link assigned
             const linkUrl = partnerLinks[num];
+            const logoSize = sizeOverrides[num] || defaultLogoSize;
             
             // Define the Card Content (Image)
             const CardContent = (
@@ -45,8 +102,8 @@ export const Customers = () => {
                 <img 
                   // ALL FILES ARE NOW .PNG
                   src={`/Img/partners/${num}.png`}
-                  alt={`Partner ${num}`}
-                  className="max-h-12 md:max-h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 mix-blend-multiply"
+                  alt={partnerNames[num] || `Partner ${num}`}
+                  className={`${logoSize} w-auto object-contain transition-transform duration-300 group-hover:scale-110 mix-blend-multiply contrast-125 brightness-105`}
                   loading="lazy"
                 />
               </Card>
