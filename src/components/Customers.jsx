@@ -6,7 +6,7 @@ export const Customers = () => {
   const partnerCount = 34;
   const partners = Array.from({ length: partnerCount }, (_, i) => i + 1);
 
-  // Real names for alt text / accessibility. Add 35-38 once confirmed.
+  // Real names for alt text / accessibility.
   const partnerNames = {
     1: "Google",
     2: "Trellix",
@@ -45,15 +45,10 @@ export const Customers = () => {
   };
 
   // CONFIGURATION: Map specific Partner IDs to their URLs
-  const partnerLinks = {
-    1: "https://www.lockthreat.ai/",
-    2: "https://smart-cjm.com/en/",
-    3: "https://timestreamgroup.com/",
-  };
+  const partnerLinks = {};
 
   // CONFIGURATION: Bump up specific logos that render smaller than their
   // neighbors due to extra whitespace baked into the source PNG.
-  // Add/remove partner numbers here and tweak the Tailwind classes as needed.
   const sizeOverrides = {
     1: "h-16 md:h-20",  // Google
     3: "h-16 md:h-20",  // Red Hat
@@ -90,17 +85,14 @@ export const Customers = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
           {partners.map((num, index) => {
             
-            // Check if this specific number has a link assigned
             const linkUrl = partnerLinks[num];
             const logoSize = sizeOverrides[num] || defaultLogoSize;
             
-            // Define the Card Content (Image)
             const CardContent = (
               <Card 
                 className={`h-24 md:h-28 flex items-center justify-center p-4 hover:shadow-lg transition-all duration-300 group border border-gray-200 bg-white dark:bg-white overflow-hidden ${linkUrl ? 'cursor-pointer hover:border-blue-400' : ''}`}
               >
                 <img 
-                  // ALL FILES ARE NOW .PNG
                   src={`/Img/partners/${num}.png`}
                   alt={partnerNames[num] || `Partner ${num}`}
                   className={`${logoSize} w-auto object-contain transition-transform duration-300 group-hover:scale-110 mix-blend-multiply contrast-125 brightness-105`}
@@ -111,10 +103,6 @@ export const Customers = () => {
 
             return (
               <AnimatedSection key={num} delay={index * 0.02}>
-                {/* CONDITIONAL RENDERING: 
-                    If a link exists for this ID, wrap it in an <a> tag. 
-                    Otherwise, just render the card. 
-                */}
                 {linkUrl ? (
                   <a href={linkUrl} target="_blank" rel="noopener noreferrer" className="block h-full">
                     {CardContent}
