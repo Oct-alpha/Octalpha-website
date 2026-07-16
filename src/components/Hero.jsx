@@ -10,7 +10,7 @@ const slides = [
     title: "AI Transformation Maturity Assessment",
     subtitle: "Modernize. Automate. Orchestrate.",
     description:
-      "Build resilient hybrid foundations with AI-ready architecture, automated observability, and zero-downtime operations.",
+      "Measure your AI readiness across people, processes, data, technology, and governance. Turn the findings into a clear, secure roadmap for successful AI adoption.",
     cta: "Explore Infrastructure",
     link: "/services/it-infrastructure",
   },
