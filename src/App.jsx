@@ -29,6 +29,7 @@ import DueDiligence from "./pages/services/DueDiligence";
 import BackupDisasterRecovery from "./pages/services/BackupDisasterRecovery";
 import FinancialReconciliation from "./pages/services/FinancialReconciliation";
 import AIGRCAutomation from "./pages/services/AIGRCAutomation";
+import WebinarRedirect from "./pages/WebinarRedirect"; // ← NEW
 import { ScrollToTop } from "./components/ScrollToTop";
 import ChatBot from "./components/ChatBot"; // ← ADD 1
 
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/blogs/cybersecurity-digital-transformation-day-one" element={<CybersecurityDigitalTransformation />} />
           <Route path="/blogs/cybersecurity-health-check" element={<CybersecurityHealthCheck />} />
           <Route path="/adhics-webinar" element={<WebinarBlog />} />
+          <Route path="/webinar" element={<WebinarRedirect />} /> {/* ← NEW */}
           <Route path="/customers" element={<CustomersPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />

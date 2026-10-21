@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { MainLayout } from "@/components/layout/MainLayout";
+import WebinarPopup from "@/components/WebinarPopup";
 
 const WHATSAPP_URL = "https://wa.me/971526543343";
 
@@ -109,6 +110,7 @@ const Index = () => {
   return (
     <MainLayout>
       <PageTransition>
+        <WebinarPopup />
         <Hero />
 
         <section className="bg-background">
