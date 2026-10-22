@@ -20,11 +20,13 @@ const safeSet = (storage, key, value) => {
 const WebinarPopup = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isMinimized, setIsMinimized] = useState(false);
+    const [isRegistered, setIsRegistered] = useState(false);
 
     useEffect(() => {
-        // Don't show after the webinar, or to people who already registered.
+        // Don't show after the webinar has ended.
         if (new Date() > WEBINAR_ENDS_AT) return;
-        if (safeGet("localStorage", REGISTERED_KEY)) return;
+        // Shown to everyone; people who already registered get a "View Details" button.
+        setIsRegistered(!!safeGet("localStorage", REGISTERED_KEY));
 
         // If dismissed earlier in this visit, come back as the small pill only.
         if (safeGet("sessionStorage", DISMISSED_KEY)) setIsMinimized(true);
@@ -77,8 +79,8 @@ const WebinarPopup = () => {
 
                     <button
                         onClick={handleMinimize}
-                        className="absolute right-4 top-4 text-white/70 hover:text-white hover:bg-white/10 rounded-full p-1 transition-all"
-                        aria-label="Minimize"
+                        className="absolute right-2 top-2 sm:right-3 sm:top-3 z-20 flex h-10 w-10 items-center justify-center text-white/80 hover:text-white hover:bg-white/10 active:bg-white/20 rounded-full transition-all"
+                        aria-label="Close"
                     >
                         <X className="h-5 w-5" />
                     </button>
@@ -121,7 +123,7 @@ const WebinarPopup = () => {
                             className="w-full h-11 sm:h-12 text-base font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all bg-gradient-to-r from-primary to-blue-600 border-0 relative overflow-hidden group"
                         >
                             <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
-                            <span>Register Free</span>
+                            <span>{isRegistered ? "You're Registered: View Details" : "Register Free"}</span>
                             <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
 
