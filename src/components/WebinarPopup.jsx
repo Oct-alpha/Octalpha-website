@@ -44,7 +44,7 @@ const WebinarPopup = () => {
     const handleMaximize = () => setIsMinimized(false);
 
     const handleRegister = () => {
-        window.location.href = WEBINAR_PAGE_URL + "#register-form";
+        window.location.href = WEBINAR_PAGE_URL;
     };
 
     if (!isOpen) return null;

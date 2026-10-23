@@ -3494,3 +3494,14 @@ a {
   cursor: pointer;
   margin-top: 1.2rem;
 }
+
+/* Subtitle under the main webinar heading */
+.webinar_subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 1.2rem 0 0;
+}
+@media (max-width: 767px) {
+  .webinar_subtitle { font-size: 1.7rem; }
+}
