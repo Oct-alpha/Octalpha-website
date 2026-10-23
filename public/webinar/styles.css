@@ -3497,9 +3497,14 @@ a {
 
 /* Subtitle under the main webinar heading */
 .webinar_subtitle {
+  display: block;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.4;
+  margin: 0;
+}
+/* Question line directly under the main webinar heading */
+.webinar_question {
   margin: 1.2rem 0 0;
 }
 @media (max-width: 767px) {
