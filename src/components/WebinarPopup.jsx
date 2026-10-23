@@ -92,12 +92,12 @@ const WebinarPopup = () => {
                         </div>
 
                         <h2 className="text-[1.4rem] sm:text-3xl font-bold tracking-tight leading-snug sm:leading-tight">
-                            Simplifying Retail Financial <br className="hidden sm:block" /> Reconciliation for UAE Retailers
+                            Retail Reconciliation Made Simple
                         </h2>
 
-                        <p className="text-blue-100/80 text-xs sm:text-sm max-w-sm mx-auto">
-                            See how reconSTREAM by Timestream &times; OctAlpha automatically matches POS, e-commerce,
-                            marketplace, payment gateway and ledger data.
+                        <p className="text-blue-100/90 text-sm sm:text-base max-w-sm mx-auto">
+                            Discover <span className="font-semibold text-sky-300">reconSTREAM</span> – An Automated
+                            Financial Reconciliation Platform for Retailers
                         </p>
                     </div>
                 </div>
