@@ -10,7 +10,15 @@ window.TIMESTREAM_ZOOM_CONFIG = {
   // Optional 11-digit numeric Zoom Webinar ID (for direct Server-to-Server API)
   defaultZoomWebinarId: '',
 
-  // Backend endpoints (tries PHP endpoint first for cPanel/WordPress, then Node.js endpoint)
+  // Lovable Cloud function that registers people in Zoom (used on the live site).
+  // Paste the URL from Lovable → Cloud → Edge Functions → zoom-register, e.g.
+  // 'https://abcdefgh.supabase.co/functions/v1/zoom-register'
+  edgeFunctionUrl: 'https://kcfrcwxzopulsmqhgkqc.supabase.co/functions/v1/zoom-register',
+  // Only if the function replies "Missing authorization header": paste the
+  // project's publishable (anon) key from Lovable → Cloud. It is safe to be public.
+  edgeFunctionAnonKey: '',
+
+  // Other backends (cPanel PHP, then Vercel/Netlify/local dev)
   phpApiEndpoint: '/webinar/zoom-register.php',
   nodeApiEndpoint: '/api/zoom-register',
 
@@ -242,11 +250,17 @@ document.addEventListener('DOMContentLoaded', function () {
       source: 'Timestream x OctAlpha Landing Page (10 Nov 2026)'
     });
 
-    for (const endpoint of [cfg.phpApiEndpoint, cfg.nodeApiEndpoint]) {
+    const endpoints = [cfg.edgeFunctionUrl, cfg.phpApiEndpoint, cfg.nodeApiEndpoint].filter(Boolean);
+    for (const endpoint of endpoints) {
       try {
+        const headers = { 'Content-Type': 'application/json' };
+        if (endpoint === cfg.edgeFunctionUrl && cfg.edgeFunctionAnonKey) {
+          headers.apikey = cfg.edgeFunctionAnonKey;
+          headers.Authorization = 'Bearer ' + cfg.edgeFunctionAnonKey;
+        }
         const res = await fetch(endpoint, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers,
           body: payload
         });
         if (res.status === 409) return { ok: false, in_progress: true };
